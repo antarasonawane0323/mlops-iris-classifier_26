@@ -1,1 +1,1 @@
-# MLOps Iris Classifier
+# mlops-iris-classifier — Version A
