@@ -8,7 +8,7 @@ from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
-
+from sklearn.metrics import classification_report
 
 def load_data():
     iris = load_iris()
@@ -39,6 +39,7 @@ def main():
 
     print(f"Accuracy: {acc:.4f}")
     print(report)
+    print(classification_report(y_test, predctions))
 
     joblib.dump(model, "models/iris_model.joblib")
     print("Model saved to models/iris_model.joblib")
