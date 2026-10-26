@@ -38,6 +38,7 @@ def preprocess(input_path: str, output_path: str) -> pd.DataFrame:
     # Drop rows with unresolvable missing target
     df = df.dropna(subset=["species"])
 
+    # Remove the collection timestamp because it isn't a model feature.
     df.drop(columns=["collected_at"], inplace=True, errors="ignore")
     df.to_csv(output_path, index=False)
     logger.info("Preprocessed %d rows -> %s", len(df), output_path)
